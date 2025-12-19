@@ -1,0 +1,31 @@
+{
+  "canisters": {
+    "renegade_icp_backend": {
+      "main": "src/renegade_icp_backend/main.mo",
+      "type": "motoko"
+    },
+    "content_canister": {
+      "type": "motoko",
+      "main": "src/renegade_icp_backend/main.mo",
+      "candid": "src/renegade_icp_backend/content_canister.did"
+    },
+    "renegade_icp_frontend": {
+      "dependencies": [
+        "renegade_icp_backend"
+      ],
+      "source": [
+        "src/renegade_icp_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "renegade_icp_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

@@ -1,0 +1,26 @@
+Deploying all canisters.
+Created a wallet canister on the "local" network for user "default" with ID "uqqxf-5h777-77774-qaaaa-cai"
+content_canister canister created with canister id: uxrrr-q7777-77774-qaaaq-cai
+renegade_icp_backend canister created with canister id: u6s2n-gx777-77774-qaaba-cai
+renegade_icp_frontend canister created with canister id: uzt4z-lp777-77774-qaabq-cai
+Building canister 'renegade_icp_backend'.
+WARN: /mnt/d/ICP_RENEGADE/Renegade-AI-Powered-Social-Media-Manager-on-ICP/renegade_icp/src/renegade_icp_backend/main.mo:62.17-62.20: warning [M0194], unused identifier msg (delete or rename to wildcard `_` or `_msg`)
+
+Building canister 'renegade_icp_frontend'.
+Building canister 'content_canister'.
+WARN: /mnt/d/ICP_RENEGADE/Renegade-AI-Powered-Social-Media-Manager-on-ICP/renegade_icp/src/renegade_icp_backend/main.mo:62.17-62.20: warning [M0194], unused identifier msg (delete or rename to wildcard `_` or `_msg`)
+
+[31mError: (B[mFailed while trying to deploy canisters.
+[33mCaused by: (B[mFailed to build all canisters.
+[33mCaused by: (B[mFailed while trying to build all canisters.
+[33mCaused by: (B[mThe post-build step failed for canister 'uzt4z-lp777-77774-qaabq-cai' (renegade_icp_frontend)
+[33mCaused by: (B[mFailed to build frontend for network 'local'.
+[33mCaused by: (B[mThe command 'cd "/mnt/d/ICP_RENEGADE/Renegade-AI-Powered-Social-Media-Manager-on-ICP/renegade_icp" && CANISTER_CANDID_PATH="/mnt/d/ICP_RENEGADE/Renegade-AI-Powered-Social-Media-Manager-on-ICP/renegade_icp/.dfx/local/canisters/renegade_icp_frontend/assetstorage.did" CANISTER_CANDID_PATH_RENEGADE_ICP_BACKEND="/mnt/d/ICP_RENEGADE/Renegade-AI-Powered-Social-Media-Manager-on-ICP/renegade_icp/.dfx/local/canisters/renegade_icp_backend/renegade_icp_backend.did" CANISTER_ID="uzt4z-lp777-77774-qaabq-cai" CANISTER_ID_CONTENT_CANISTER="uxrrr-q7777-77774-qaaaq-cai" CANISTER_ID_RENEGADE_ICP_BACKEND="u6s2n-gx777-77774-qaaba-cai" CANISTER_ID_RENEGADE_ICP_FRONTEND="uzt4z-lp777-77774-qaabq-cai" DFX_NETWORK="local" DFX_VERSION="0.26.0" "npm" "run" "build" "--workspace" "renegade_icp_frontend"' failed with exit status 'exit status: 1'.
+Stdout:
+
+Stderr:
+npm error No workspaces found:
+npm error   --workspace=renegade_icp_frontend
+
+npm error A complete log of this run can be found in: C:\Users\Administrator\AppData\Local\npm-cache\_logs\2025-10-15T04_12_32_603Z-debug-0.log
+

@@ -1,0 +1,12 @@
+Building canister 'content_canister'.
+[31mError: (B[mFailed while trying to build all canisters.
+[33mCaused by: (B[mThe build step failed for canister 'umunu-kh777-77774-qaaca-cai' (content_canister)
+[33mCaused by: (B[mFailed to build Motoko canister 'content_canister'.
+[33mCaused by: (B[mFailed to compile Motoko.
+[33mCaused by: (B[mFailed to run 'moc'.
+[33mCaused by: (B[mThe command 'cd "/mnt/d/ICP_RENEGADE/Renegade-AI-Powered-Social-Media-Manager-on-ICP/renegade_icp" && "/home/asingizwe1/.cache/dfinity/versions/0.26.0/moc" "/mnt/d/ICP_RENEGADE/Renegade-AI-Powered-Social-Media-Manager-on-ICP/renegade_icp/src/renegade_icp_backend/main.mo" "-o" "/mnt/d/ICP_RENEGADE/Renegade-AI-Powered-Social-Media-Manager-on-ICP/renegade_icp/.dfx/local/canisters/content_canister/content_canister.wasm" "-c" "--debug" "--idl" "--stable-types" "--public-metadata" "candid:service" "--public-metadata" "candid:args" "--actor-idl" "/mnt/d/ICP_RENEGADE/Renegade-AI-Powered-Social-Media-Manager-on-ICP/renegade_icp/.dfx/local/canisters/idl/" "--actor-alias" "content_canister" "umunu-kh777-77774-qaaca-cai" "--package" "base" "/home/asingizwe1/.cache/dfinity/versions/0.26.0/base"' failed with exit status 'exit status: 1'.
+Stdout:
+
+Stderr:
+/mnt/d/ICP_RENEGADE/Renegade-AI-Powered-Social-Media-Manager-on-ICP/renegade_icp/src/renegade_icp_backend/main.mo:38.33-38.38: type error [M0057], unbound variable Nat64
+

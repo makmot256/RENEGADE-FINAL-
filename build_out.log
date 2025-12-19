@@ -1,0 +1,4 @@
+Building canister 'content_canister'.
+WARN: /mnt/d/ICP_RENEGADE/Renegade-AI-Powered-Social-Media-Manager-on-ICP/renegade_icp/src/renegade_icp_backend/main.mo:62.17-62.20: warning [M0194], unused identifier msg (delete or rename to wildcard `_` or `_msg`)
+
+Finished building canisters.
