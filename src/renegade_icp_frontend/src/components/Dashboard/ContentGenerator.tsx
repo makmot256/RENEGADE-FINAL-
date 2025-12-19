@@ -10,23 +10,30 @@ import { useToast } from "@/components/ui/use-toast";
 const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3001";
 import { AuthClient } from "@dfinity/auth-client";
 import { Actor, HttpAgent } from "@dfinity/agent";
-import { idlFactory as content_idl } from "../../../../declarations/content_canister";
+// TODO: Generate declarations with `dfx generate`
+// import { idlFactory as content_idl } from "../../../../declarations/content_canister";
 import { Principal } from "@dfinity/principal";
+
+// Temporary placeholder for content_idl until declarations are generated
+const content_idl: any = { 
+  service: () => ({
+    create_draft: () => {},
+    update_draft_content: () => {},
+    update_draft_status: () => {},
+  })
+};
 
 //--  const content_canister_id = import.meta.env.VITE_CANISTER_ID_CONTENT_CANISTER!;
 //If the variable isn’t loaded, that ! forces it to crash.
 // ✅ Replace the hardcoded canisterId import with environment variables
 const contentCanisterEnv = import.meta.env.VITE_CANISTER_ID_CONTENT_CANISTER;
-if (!contentCanisterEnv) {
-  throw new Error("Missing VITE_CANISTER_ID_CONTENT_CANISTER in .env");
-}
-const content_canister_id = Principal.fromText(contentCanisterEnv);
-const backend_canister_id = Principal.fromText(
-  import.meta.env.VITE_CANISTER_ID_RENEGADE_ICP_BACKEND || ""
-);
-const frontend_canister_id = Principal.fromText(
-  import.meta.env.VITE_CANISTER_ID_RENEGADE_ICP_FRONTEND || ""
-);
+const content_canister_id = contentCanisterEnv ? Principal.fromText(contentCanisterEnv) : Principal.anonymous();
+const backend_canister_id = import.meta.env.VITE_CANISTER_ID_RENEGADE_ICP_BACKEND 
+  ? Principal.fromText(import.meta.env.VITE_CANISTER_ID_RENEGADE_ICP_BACKEND)
+  : Principal.anonymous();
+const frontend_canister_id = import.meta.env.VITE_CANISTER_ID_RENEGADE_ICP_FRONTEND
+  ? Principal.fromText(import.meta.env.VITE_CANISTER_ID_RENEGADE_ICP_FRONTEND)
+  : Principal.anonymous();
 
 const platforms = [
   { value: "twitter", label: "X / Twitter" },
