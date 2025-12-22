@@ -58,17 +58,3 @@ export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
 
 
 
-// import { Button } from "@/components/ui/button";
-
-// // Basic submit button
-// <Button type="submit">Submit</Button>
-
-// // With loading state
-// <Button type="submit" disabled={isLoading}>
-//   {isLoading ? "Submitting..." : "Submit"}
-// </Button>
-
-// // In a form with variant
-// <Button type="submit" variant="default" size="lg">
-//   Submit
-// </Button>
