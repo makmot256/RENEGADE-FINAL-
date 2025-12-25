@@ -1,12 +1,25 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
-import { Twitter, Instagram, Linkedin, Facebook, Plus, Link2 } from "lucide-react";
+import {
+  Twitter,
+  Instagram,
+  Linkedin,
+  Facebook,
+  Plus,
+  Link2,
+} from "lucide-react";
 
 interface SocialAccount {
   id: string;
@@ -54,12 +67,14 @@ const SocialAccounts: React.FC = () => {
       prev.map((account) => {
         if (account.id === id) {
           const newConnected = !account.connected;
-          
+
           toast({
             title: newConnected ? "Account Connected" : "Account Disconnected",
-            description: `${account.platform} account has been ${newConnected ? "connected" : "disconnected"}.`,
+            description: `${account.platform} account has been ${
+              newConnected ? "connected" : "disconnected"
+            }.`,
           });
-          
+
           return { ...account, connected: newConnected };
         }
         return account;
@@ -70,7 +85,8 @@ const SocialAccounts: React.FC = () => {
   const handleConnect = () => {
     toast({
       title: "Connect New Account",
-      description: "This would open the OAuth flow to connect a new social media account.",
+      description:
+        "This would open the OAuth flow to connect a new social media account.",
     });
   };
 
@@ -87,6 +103,71 @@ const SocialAccounts: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {accounts.map((account) => (
+          <Card key={account.id} className="cyber-card">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <div className="flex items-center space-x-2">
+                <div
+                  className={`p-2 rounded-full ${
+                    account.connected ? "bg-renegade-green/20" : "bg-muted"
+                  }`}
+                >
+                  {account.icon}
+                </div>
+                <div>
+                  <CardTitle className="text-sm font-medium">
+                    {account.platform}
+                  </CardTitle>
+                  <CardDescription>{account.username}</CardDescription>
+                </div>
+              </div>
+              <Badge
+                variant={account.connected ? "outline" : "secondary"}
+                className={
+                  account.connected
+                    ? "border-renegade-green/50 text-renegade-green"
+                    : ""
+                }
+              >
+                {account.connected ? "Connected" : "Disconnected"}
+              </Badge>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center justify-between pt-2">
+                <Label htmlFor={`connection-${account.id}`} className="text-sm">
+                  Auto-posting
+                </Label>
+                <Switch
+                  id={`connection-${account.id}`}
+                  checked={account.connected}
+                  onCheckedChange={() => toggleConnection(account.id)}
+                  disabled={!account.connected}
+                  className="data-[state=checked]:bg-renegade-green"
+                />
+              </div>
+            </CardContent>
+            <CardFooter className="border-t border-renegade-green/20 pt-4">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-muted-foreground hover:text-foreground w-full"
+                onClick={() => toggleConnection(account.id)}
+              >
+                <Link2 className="mr-2 h-4 w-4" />
+                {account.connected ? "Disconnect" : "Connect"} Account
+              </Button>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default SocialAccounts;
+
+{
+  /* <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {accounts.map((account) => (
           <Card key={account.id} className="cyber-card">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -136,4 +217,5 @@ const SocialAccounts: React.FC = () => {
   );
 };
 
-export default SocialAccounts;
+export default SocialAccounts; */
+}
