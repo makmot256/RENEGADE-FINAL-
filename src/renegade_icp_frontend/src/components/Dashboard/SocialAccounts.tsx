@@ -166,17 +166,5 @@ const SocialAccounts: React.FC = () => {
 
 export default SocialAccounts;
 
-//  <Link2 className="mr-2 h-4 w-4" />
-//                 {account.connected ? "Disconnect" : "Connect"} Account
-//               </Button>
-//             </CardFooter>
-//           </Card>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default SocialAccounts;
 
 
