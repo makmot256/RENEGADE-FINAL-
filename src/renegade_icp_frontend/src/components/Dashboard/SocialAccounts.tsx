@@ -167,4 +167,41 @@ const SocialAccounts: React.FC = () => {
 export default SocialAccounts;
 
 
+//   {account.connected ? "Connected" : "Disconnected"}
+//               </Badge>
+//             </CardHeader>
+//             <CardContent>
+//               <div className="flex items-center justify-between pt-2">
+//                 <Label htmlFor={`connection-${account.id}`} className="text-sm">
+//                   Auto-posting
+//                 </Label>
+//                 <Switch
+//                   id={`connection-${account.id}`}
+//                   checked={account.connected}
+//                   onCheckedChange={() => toggleConnection(account.id)}
+//                   disabled={!account.connected}
+//                   className="data-[state=checked]:bg-renegade-green"
+//                 />
+//               </div>
+//             </CardContent>
+//             <CardFooter className="border-t border-renegade-green/20 pt-4">
+//               <Button
+//                 variant="ghost"
+//                 size="sm"
+//                 className="text-muted-foreground hover:text-foreground w-full"
+//                 onClick={() => toggleConnection(account.id)}
+//               >
+//                 <Link2 className="mr-2 h-4 w-4" />
+//                 {account.connected ? "Disconnect" : "Connect"} Account
+//               </Button>
+//             </CardFooter>
+//           </Card>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default SocialAccounts;
+
 
