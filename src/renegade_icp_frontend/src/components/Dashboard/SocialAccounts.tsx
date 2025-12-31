@@ -145,6 +145,7 @@ const SocialAccounts: React.FC = () => {
                   className="data-[state=checked]:bg-renegade-green"
                 />
               </div>
+              {/* //this  is for card content strictly */}
             </CardContent>
             <CardFooter className="border-t border-renegade-green/20 pt-4">
               <Button
