@@ -173,7 +173,26 @@ export default SocialAccounts;
 
 
 
+//               {/* //this  is for card content strictly */}
+//             <CardFooter className="border-t border-renegade-green/20 pt-4">
+//               <Button
+//                 variant="ghost"
+//                 size="sm"
+//                 className="text-muted-foreground hover:text-foreground w-full"
+//                 onClick={() => toggleConnection(account.id)}
+//               >
+//                 <Link2 className="mr-2 h-4 w-4" />
+//                 {account.connected ? "Disconnect" : "Connect"} Account
+//               </Button>
+//             </CardFooter>
+//           </Card>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
 
+// export default SocialAccounts;
 
 
 
